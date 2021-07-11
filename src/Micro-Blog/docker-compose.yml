@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  postdb:
+    image: mysql
+
+  post.api:
+    image: ${DOCKER_REGISTRY-}postapi
+    build:
+      context: .
+      dockerfile: Services/Post/Post.API/Dockerfile

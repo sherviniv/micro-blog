@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  postdb:
+    container_name: postdb
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    restart: always
+    ports:
+        - "3306:3306"
+    volumes:
+        - /my/own/datadir:/data/mysqldb
+
+  post.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - postdb
+    ports:
+      - "8000:80"
