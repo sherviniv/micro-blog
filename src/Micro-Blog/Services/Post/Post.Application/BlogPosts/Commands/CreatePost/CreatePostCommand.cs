@@ -1,16 +1,12 @@
-﻿using Post.Domain.Common;
+﻿using MediatR;
 
-namespace Post.Domain.Entities
+namespace Post.Application.BlogPosts.Commands.CreatePost
 {
-    public class BlogPost : BaseEntity
+    public class CreatePostCommand : IRequest<int>
     {
         public string Title { get; set; }
         public string Content { get; set; }
         public string Img { get; set; }
         public bool Published { get; set; }
-
-        public BlogPost()
-        {
-        }
     }
 }
