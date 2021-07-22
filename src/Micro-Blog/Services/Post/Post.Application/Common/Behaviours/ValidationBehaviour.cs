@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using ValidationException = Post.Application.BlogPosts.Exceptions.ValidationException;
+using ValidationException = Post.Application.Common.Exceptions.ValidationException;
 
 
 namespace Post.Application.Common.Behaviours

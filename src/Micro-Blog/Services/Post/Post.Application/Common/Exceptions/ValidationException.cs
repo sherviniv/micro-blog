@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Post.Application.BlogPosts.Exceptions
+namespace Post.Application.Common.Exceptions
 {
     public class ValidationException : ApplicationException
     {

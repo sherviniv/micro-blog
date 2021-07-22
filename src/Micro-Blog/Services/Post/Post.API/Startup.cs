@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Post.Infrastructure;
 using Post.Application;
+using Post.API.Middlewares;
 
 namespace Post.API
 {
@@ -41,6 +42,7 @@ namespace Post.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Post.API v1"));
             }
+            app.UseCustomExceptionHandlerMiddleware();
 
             app.UseRouting();
 
