@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <Folder Include="BlogPosts\EventHandlers\" />
+    <Folder Include="BlogPosts\Queries\GetPostsList\" />
+    <Folder Include="BlogPosts\Queries\GetPost\" />
   </ItemGroup>
 
 </Project>

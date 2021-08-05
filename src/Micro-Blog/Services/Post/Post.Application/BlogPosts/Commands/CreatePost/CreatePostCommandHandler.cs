@@ -17,7 +17,7 @@ namespace Post.Application.BlogPosts.Commands.CreatePost
         public CreatePostCommandHandler(
             IPostDbContext context,
             IMapper mapper,
-             ILogger<CreatePostCommandHandler> logger)
+            ILogger<CreatePostCommandHandler> logger)
         {
             _context = context;
             _mapper = mapper;
@@ -28,7 +28,9 @@ namespace Post.Application.BlogPosts.Commands.CreatePost
         {
             var entity = _mapper.Map<BlogPost>(request);
             await _context.Posts.AddAsync(entity);
+            await _context.SaveChangesAsync();
             _logger.LogInformation($"Post {entity.Id} is successfully created.");
+            //Todo: raise event for subscriber service
             return entity.Id;
         }
     }
