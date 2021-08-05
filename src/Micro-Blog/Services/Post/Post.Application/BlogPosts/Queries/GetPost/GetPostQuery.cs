@@ -2,7 +2,7 @@
 
 namespace Post.Application.BlogPosts.Queries.GetPost
 {
-    class GetPostQuery : IRequest<PostVM>
+    public class GetPostQuery : IRequest<PostVM>
     {
         public int Id { get; set; }
 
