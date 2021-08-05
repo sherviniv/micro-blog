@@ -4,8 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Post.Application.Common.Exceptions;
 using Post.Application.Common.Interfaces;
-using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
