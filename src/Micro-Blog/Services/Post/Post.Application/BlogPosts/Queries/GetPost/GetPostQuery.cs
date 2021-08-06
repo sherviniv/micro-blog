@@ -6,9 +6,9 @@ namespace Post.Application.BlogPosts.Queries.GetPost
     {
         public int Id { get; set; }
 
-        public GetPostQuery(int userName)
+        public GetPostQuery(int id)
         {
-            Id = Id;
+            Id = id;
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Post.Application.Common.Interfaces
     public interface IPostDbContext
     {
         DbSet<BlogPost> Posts { get; set; }
+        DbSet<Tag> Tags { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken());
     }
 }
