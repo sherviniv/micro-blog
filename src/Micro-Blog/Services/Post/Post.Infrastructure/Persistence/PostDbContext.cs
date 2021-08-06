@@ -15,6 +15,7 @@ namespace Post.Infrastructure.Persistence
         }
 
         public DbSet<BlogPost> Posts { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {

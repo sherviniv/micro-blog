@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Post.Infrastructure.Persistence;
 
 namespace Post.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(PostDbContext))]
-    partial class PostDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210806090109_tag")]
+    partial class tag
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
