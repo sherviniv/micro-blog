@@ -19,9 +19,7 @@
 
   <ItemGroup>
     <Folder Include="BlogPosts\EventHandlers\" />
-    <Folder Include="BlogPosts\Queries\GetPostsByTag\" />
     <Folder Include="Tags\Commands\AssignTag\" />
-    <Folder Include="Tags\Queries\GetTags\" />
   </ItemGroup>
 
 </Project>

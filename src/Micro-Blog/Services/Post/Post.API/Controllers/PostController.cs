@@ -5,9 +5,9 @@ using Post.Application.BlogPosts.Commands.CreatePost;
 using Post.Application.BlogPosts.Commands.DeletePost;
 using Post.Application.BlogPosts.Commands.UpdatePost;
 using Post.Application.BlogPosts.Queries.GetPost;
+using Post.Application.BlogPosts.Queries.GetPostsByTag;
 using Post.Application.BlogPosts.Queries.GetPostsList;
 using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Post.API.Controllers
 {
@@ -30,6 +30,12 @@ namespace Post.API.Controllers
         public async Task<ActionResult<PostsVM>> GetPosts(string search)
         {
             return Ok(await _mediator.Send(new GetPostsListQuery(search)));
+        }
+
+        [HttpGet("{id}", Name = "GetPostsByTagId")]
+        public async Task<ActionResult<PostsVM>> GetPostsByTagId(int tagid)
+        {
+            return Ok(await _mediator.Send(new GetPostsByTagQuery(tagid)));
         }
 
         [HttpPost("[action]")]
