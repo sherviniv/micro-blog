@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
+using Post.Application.Tags.Queries.GetTag;
 
 namespace Post.Application.Tags.Queries.GetTagsList
 {
@@ -34,7 +35,7 @@ namespace Post.Application.Tags.Queries.GetTagsList
                                         || t.Description.Contains(search));
             }
             vm = new(
-                await result.ProjectTo<TagsVM>(_mapper.ConfigurationProvider)
+                await result.ProjectTo<TagVM>(_mapper.ConfigurationProvider)
                             .ToListAsync());
 
             return vm;

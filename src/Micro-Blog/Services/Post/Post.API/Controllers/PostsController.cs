@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace Post.API.Controllers
 {
-    public class PostController : ApiControllerBase
+    public class PostsController : ApiControllerBase
     {
         private readonly IMediator _mediator;
 
-        public PostController(IMediator mediator)
+        public PostsController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -26,16 +26,16 @@ namespace Post.API.Controllers
             return Ok(await _mediator.Send(new GetPostQuery(id)));
         }
 
-        [HttpGet("{search}", Name = "GetPosts")]
-        public async Task<ActionResult<PostsVM>> GetPosts(string search)
+        [HttpGet("[action]", Name = "GetPosts")]
+        public async Task<ActionResult<PostsVM>> GetPosts(string search = null)
         {
             return Ok(await _mediator.Send(new GetPostsListQuery(search)));
         }
 
-        [HttpGet("{id}", Name = "GetPostsByTagId")]
-        public async Task<ActionResult<PostsVM>> GetPostsByTagId(int tagid)
+        [HttpGet("[action]/{id}", Name = "GetPostsByTagId")]
+        public async Task<ActionResult<PostsVM>> GetPostsByTagId(int id)
         {
-            return Ok(await _mediator.Send(new GetPostsByTagQuery(tagid)));
+            return Ok(await _mediator.Send(new GetPostsByTagQuery(id)));
         }
 
         [HttpPost("[action]")]
@@ -50,7 +50,7 @@ namespace Post.API.Controllers
             return Ok(await _mediator.Send(command));
         }
 
-        [HttpDelete("{id}", Name = "DeleteOrder")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
             return Ok(await _mediator.Send(new DeletePostCommand(id)));

@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using Post.Application.Tags.Queries.GetTag;
+using System.Collections.Generic;
 
 namespace Post.Application.Tags.Queries.GetTagsList
 {
     public class TagsVM
     {
-        public IList<TagsVM> Tags { get; set; }
+        public IList<TagVM> Tags { get; set; }
 
-        public TagsVM(List<TagsVM> tags)
+        public TagsVM(List<TagVM> tags)
         {
             Tags = tags;
         }
