@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Post.API.Base;
+using Post.Application.Tags.Commands.AssignTag;
 using Post.Application.Tags.Commands.CreateTag;
 using Post.Application.Tags.Commands.DeleteTag;
 using Post.Application.Tags.Commands.UpdateTag;
@@ -47,6 +48,12 @@ namespace Post.API.Controllers
         public async Task<ActionResult> Delete(int id)
         {
             return Ok(await _mediator.Send(new DeleteTagCommand(id)));
+        }
+
+        [HttpPost("[action]")]
+        public async Task<ActionResult<int>> UpdatePostTags([FromBody] AssignTagCommand command)
+        {
+            return Ok(await _mediator.Send(command));
         }
     }
 }
