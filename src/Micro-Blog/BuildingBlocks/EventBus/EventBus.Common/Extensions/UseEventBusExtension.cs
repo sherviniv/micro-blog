@@ -12,7 +12,7 @@ namespace EventBus.Common.Extensions
 {
     public static class UseEventBusExtension
     {
-        public static void UseEventBus(this IServiceCollection services, string hostName, List<ConsumerDetail> consumers)
+        public static void UseEventBus(this IServiceCollection services, EventBusSetting setting, List<ConsumerDetail> consumers)
         {
             // MassTransit-RabbitMQ Configuration
             services.AddMassTransit(config =>
@@ -25,7 +25,7 @@ namespace EventBus.Common.Extensions
 
                 config.UsingRabbitMq((ctx, cfg) =>
                 {
-                    cfg.Host(hostName);
+                    cfg.Host(setting.HostName);
                     foreach (var consumer in consumers)
                     {
                         consumer.Consumers.ForEach(cn => 
