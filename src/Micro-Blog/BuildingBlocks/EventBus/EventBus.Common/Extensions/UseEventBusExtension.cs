@@ -1,12 +1,9 @@
-﻿using EventBus.Common.Models;
+﻿using EventBus.Common.Abstractions;
+using EventBus.Common.Models;
 using MassTransit;
-using Microsoft.Extensions.Configuration;
+using MassTransit.Transports;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventBus.Common.Extensions
 {

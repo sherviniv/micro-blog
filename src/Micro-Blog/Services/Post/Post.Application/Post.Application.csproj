@@ -14,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Common\EventBus.Common.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Events\EventBus.Events.csproj" />
     <ProjectReference Include="..\Post.Domain\Post.Domain.csproj" />
   </ItemGroup>
 
