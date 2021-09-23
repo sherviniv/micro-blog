@@ -9,4 +9,9 @@
     <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Events\EventBus.Events.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

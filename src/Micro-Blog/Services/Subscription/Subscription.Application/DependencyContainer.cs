@@ -1,12 +1,10 @@
 ﻿using EventBus.Common.Constants;
 using EventBus.Common.Extensions;
 using EventBus.Common.Models;
-
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Subscription.Application.EventBusConsumers.Blog;
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace Subscription.Application
 {
