@@ -5,13 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Common\EventBus.Common.csproj" />
-    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Events\EventBus.Events.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Common\EventBus.Common.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Events\EventBus.Events.csproj" />
+    <ProjectReference Include="..\Subscription.Domain\Subscription.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\Exceptions\" />
   </ItemGroup>
 
 </Project>

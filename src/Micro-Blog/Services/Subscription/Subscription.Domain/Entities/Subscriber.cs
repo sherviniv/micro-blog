@@ -9,7 +9,20 @@ namespace Subscription.Domain.Entities
 
         [Required]
         public string Email { get; set; }
-        public DateTime Created { get; set; }
+        public DateTime Created { get;}
         public bool IsActive { get; set; }
+
+        public Subscriber()
+        {
+            Created = DateTime.Now;
+            IsActive = true;
+        }
+
+        public Subscriber(string email)
+        {
+            Email = email;
+            Created = DateTime.Now;
+            IsActive = true;
+        }
     }
 }
